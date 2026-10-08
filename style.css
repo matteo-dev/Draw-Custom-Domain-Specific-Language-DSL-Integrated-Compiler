@@ -1,0 +1,301 @@
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #434343; /* Gris nuancé */
+    color: #e0e0e0;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Sidebar Container */
+#sidebar {
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #333;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+    padding: 40px 20px; /* Increased top padding to move header down */
+    text-align: center;
+    background-color: #2a2a2a;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Sidebar Navigation Links */
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 8px; /* Slightly reduced gap between buttons */
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+    color: #cccccc;
+    padding: 8px 12px; /* Reduced button size */
+    margin: 4px 0; /* Adjust spacing */
+    border-radius: 5px;
+    font-size: 0.9rem; /* Reduced font size */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+    background-color: #333;
+    color: #ff7f50;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+    padding: 15px;
+    text-align: center;
+    font-size: 0.8rem;
+    background-color: #2a2a2a;
+    color: #888888;
+}
+
+/* Buttons in Drawing Tool Sidebar */
+.sidebar-section button {
+    padding: 6px 10px; /* Smaller buttons */
+    font-size: 0.8rem; /* Smaller font size */
+    border: none;
+    border-radius: 4px;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-section button:hover {
+    background: #444;
+}
+
+/* Sidebar in collapsed mode with only icons */
+#sidebar.collapsed {
+    width: 60px; /* Shrink sidebar width */
+}
+
+#sidebar.collapsed .sidebar-nav a {
+    text-align: center;
+    font-size: 1rem;
+    padding: 8px;
+    display: block;
+}
+
+#sidebar.collapsed .sidebar-nav a:hover {
+    background-color: #444;
+    color: #ff7f50;
+}
+
+#sidebar.collapsed .sidebar-header, #sidebar.collapsed .sidebar-footer {
+    display: none; /* Hide unnecessary content */
+}
+
+/* Main Container */
+.container {
+    margin-left: 260px; /* Space for sidebar */
+    width: calc(100% - 260px);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.8; /* Adjusted line spacing */
+}
+
+/* Home Header */
+.home-header {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.home-header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.home-header p {
+    font-size: 1.5rem;
+    color: #cccccc;
+    margin-bottom: 2rem;
+}
+
+/* Modern Button Styling */
+button, .control-btn, .get-started-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(45deg, #ff7f50, #ff6347);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover, .control-btn:hover, .get-started-btn:hover {
+    background: linear-gradient(45deg, #ff6347, #ff7f50);
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:active, .control-btn:active, .get-started-btn:active {
+    transform: translateY(0px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Features Section */
+.features-section {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+.feature-box {
+    background-color: #4b4949; /* Foncé par rapport au fond principal */
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    width: 280px; /* Ensures consistent size */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.feature-box h2 {
+    font-size: 1.3rem;
+    color: #ff7f50;
+    margin-bottom: 0.5rem;
+}
+
+.feature-box p {
+    font-size: 1rem;
+    color: #cccccc;
+}
+
+/* Drawing Canvas */
+.canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+#drawingCanvas {
+    background-color: #ffffff;
+    border: 2px solid #555;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Button Container Styling */
+#buttonContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 1rem; /* Ensure spacing between buttons */
+    margin-top: 1.5rem;
+    padding: 0 1rem; /* Add breathing room */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #buttonContainer {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center;
+    }
+
+    #sidebar {
+        width: 100%; /* Full width for mobile */
+        height: auto;
+        position: relative;
+    }
+
+    .container {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .features-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-box {
+        width: 100%;
+    }
+
+    #buttonContainer {
+        flex-direction: column;
+    }
+
+    .control-btn {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Tabs Styling */
+#tabs-container {
+    display: flex;
+    border-bottom: 2px solid #555;
+    margin-bottom: 1rem;
+}
+
+#tabs {
+    display: flex;
+    gap: 1rem;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab:hover {
+    background-color: #444;
+}
+
+.tab.active {
+    background-color: #555;
+    color: #ff7f50;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-content {
+    display: none;
+    padding: 1rem;
+    background-color: #2a2a2a;
+    border-radius: 0 0 8px 8px;
+}
+
+.tab-content.active {
+    display: block;
+}
