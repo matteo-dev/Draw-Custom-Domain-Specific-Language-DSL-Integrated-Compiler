@@ -193,3 +193,127 @@ Ouvrez une Pull Request.
 - Ahmed
 - Baptiste
 - Emma
+
+# draw++
+
+## Execution
+ 
+To correctly run all functions, you need to:
+
+  - Download all the code present in this GitHub repository and place them in the same directory.
+  - Install Flask on your computer using the command `pip install flask` in your terminal.
+  - Execute the Python code `app.py`.
+
+## Description
+
+**draw++** is a graphical programming language designed to draw and manipulate shapes on a screen via simple and advanced instructions. This project aims to develop an Integrated Development Environment (IDE), a compiler in Python, and intermediate code in C to execute programs written in this language.
+
+The project is carried out as part of an ING1 Mathematical Engineering curriculum, with a team of 4 to 5 people.
+
+## Features
+
+- **Graphical programming language** with elementary instructions (movement, drawing shapes) and advanced instructions (conditions, loops, variables).
+- **Integrated IDE** allowing you to write, execute, and visualize `draw++` programs.
+- **Python compiler** that translates `draw++` code into intermediate C code.
+- **Integrated error handling system** to help identify and correct syntax errors in programs.
+
+## Instructions 
+
+- Create a cursor. You can have multiple. A cursor has a current position on the screen, often represented by coordinates (x, y). It can be visible or hidden on the screen.
+- Assign a color or a thickness to a cursor.
+- Move a cursor forward (a jump) in a relative manner expressed in pixels.
+- Rotate a cursor by a relative amount expressed in degrees.
+- Draw, for a given cursor, a shape (segment, square, circle, point, arc, etc.). Shape characteristics must be specified as operands of the instructions.
+- Animate a drawing.
+- And other instructions to propose.
+
+- Assignment instruction: Assignment of values to variables.
+- Block instructions: Grouping instructions into a single unit.
+- Conditional instructions: `if`, `else` to execute code based on conditions.
+- Repetitive instructions: `for`, `while`, `do-while` loops to repeat instructions multiple times.
+
+## List of Tokens 
+
+a. Keywords
+These keywords are reserved and have a specific meaning in the language.
+- `cursor`: to create a cursor.
+- `move`: to move a cursor.
+- `rotate`: to rotate a cursor.
+- `set`: to assign a color or thickness.
+- `draw`: to draw a shape.
+- `animate`: to animate a drawing.
+- `if`, `else`: for conditions.
+- `for`, `while`: for loops.
+- `begin`, `end`: to delimit instruction blocks.
+- `to`: used in `for` loops.
+- `color`, `thickness`, `size`: to define properties.
+  
+b. Symbols
+These are the operators and separators used to structure the code.
+- `=`: assignment operator.
+- `+`, `-`, `*`, `/`: arithmetic operators.
+- `<`, `>`, `==`: comparison operators.
+- `,`: separator for coordinates or parameters.
+- `(`, `)`: parentheses to group expressions.
+- `{`, `}`: braces for instruction blocks.
+- `:`: often used for conditional syntax.
+  
+c. Identifiers
+User-defined cursor or variable names.
+Example: `C1`, `x`, `y`.
+
+d. Literals
+Numeric values or property values that can appear in instructions.
+- Numbers: integers for coordinates, sizes, etc.
+- Colors: predefined color names (`red`, `blue`, `green`, etc.).
+
+e. Shapes
+- These tokens represent the various shapes to draw: `segment`, `circle`, `square`, `arc`, `point`.
+
+## Main Files
+
+Project Structure
+
+Here is an overview of the main files of the project:
+
+Main Files
+
+1. `app.py`
+
+This file is the main entry point of the project. It initializes the program and manages the main execution by coordinating other modules.
+
+2. `parser.py`
+
+Implements a syntax analyzer (parser) to check and structure inputs according to the rules defined by the target language.
+
+3. `lexer.py`
+
+This module implements the lexical analyzer (lexer), splitting the input into lexical units or "tokens".
+
+4. `interpreter.py`
+
+This module takes the analyzed code and executes it following the rules defined to interpret the target language.
+
+5. `code_generator.py`
+
+Generates code or instructions based on data analyzed by the parser.
+
+6. `shapes.py`
+
+Contains utility functions or classes used in other modules.
+
+7. `interface.py`
+
+Provides a user interface to interact with the system.
+
+8. `errod_handling.py` (Error Handling)
+
+Handles errors encountered during lexing, parsing, or interpretation.
+
+## Necessary Installation 
+
+Prerequisites
+
+Python 3.x
+
+Modules listed in `requirements.txt`
